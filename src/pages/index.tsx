@@ -1316,9 +1316,6 @@ export default function Home() {
                           <div className="mt-2 flex flex-col gap-1 text-sm text-muted-foreground">
                             <p className="font-semibold text-foreground">{edu.institution}</p>
                             <p>{edu.duration} • {edu.location}</p>
-                            <p className="mt-1">
-                              <span className="font-semibold text-primary">Focus:</span> {edu.focus}
-                            </p>
                           </div>
                         </div>
                         <div className="text-right">
@@ -1328,14 +1325,6 @@ export default function Home() {
                           <p className="text-sm text-muted-foreground">GPA</p>
                         </div>
                       </div>
-
-                      {edu.thesis && (
-                        <div className="mt-4">
-                          <p className="text-sm text-muted-foreground">
-                            <span className="font-semibold text-foreground">Thesis:</span> {edu.thesis}
-                          </p>
-                        </div>
-                      )}
 
                       <div className="mt-6 grid gap-6 md:grid-cols-2">
                         <div>
