@@ -6,9 +6,6 @@ import {
   ChevronRight,
   Code2,
   Frame,
-  SearchCheck,
-  Eye,
-  MonitorSmartphone,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
@@ -27,13 +24,40 @@ import {
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 import {
-  BarChart3,
   Sparkles,
-  Camera,
   Sigma,
   Server,
 } from "lucide-react";
 
+// TypeScript interfaces for achievements
+interface Publication {
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  type: string;
+  status: string;
+  link?: string;
+  citation?: string;
+  description: string;
+}
+
+interface Patent {
+  title: string;
+  number: string;
+  year: string;
+  status: string;
+  link?: string;
+  organization?: string;
+  description: string;
+}
+
+type AchievementItem = Publication | Patent;
+
+interface AchievementSection {
+  category: string;
+  items: AchievementItem[];
+}
 
 const aboutStats = [{ label: "Years of experience", value: "2+" }, { label: "Technologies & frameworks used", value: "20+" }, { label: "Companies worked with", value: "3+" }, { label: "End-to-end projects delivered", value: "10+" }];
 
@@ -503,7 +527,7 @@ const education = [
 ];
 
 // Achievements & Publications Data
-const achievements = [
+const achievements: AchievementSection[] = [
   {
     category: "Publications",
     items: [
@@ -543,6 +567,15 @@ const achievements = [
     ]
   },
 ];
+
+// Type guard functions
+function isPublication(item: AchievementItem): item is Publication {
+  return 'authors' in item;
+}
+
+function isPatent(item: AchievementItem): item is Patent {
+  return 'number' in item;
+}
 
 export default function Home() {
   const refScrollContainer = useRef(null);
@@ -1210,7 +1243,7 @@ export default function Home() {
 
                       {/* Courses Taught */}
                       <div className="mt-6 space-y-6">
-                        {teaching.courses.map((course, idx) => (
+                        {teaching.courses.map((course) => (
                           <div key={course.code} className="rounded-lg bg-white/5 p-6">
                             <div className="flex items-start justify-between">
                               <div className="flex-1">
@@ -1401,46 +1434,46 @@ export default function Home() {
                         className="border-white/10 bg-white/5 backdrop-blur transition-all duration-300 hover:border-white/20 hover:bg-white/10"
                       >
                         <CardContent className="p-6">
-                          {section.category === "Publications" ? (
+                          {isPublication(item) ? (
                             <>
                               <div className="flex items-start justify-between gap-4">
                                 <div className="flex-1">
                                   <div className="mb-2 flex flex-wrap items-center gap-2">
                                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                                      {(item as any).type}
+                                      {item.type}
                                     </span>
                                     <span className={`rounded-full px-3 py-1 text-xs font-medium ${
-                                      (item as any).status === "Published" 
+                                      item.status === "Published" 
                                         ? "bg-green-500/10 text-green-500" 
                                         : "bg-yellow-500/10 text-yellow-500"
                                     }`}>
-                                      {(item as any).status}
+                                      {item.status}
                                     </span>
                                   </div>
                                   <h4 className="text-lg font-bold tracking-tight">
                                     {item.title}
                                   </h4>
                                   <p className="mt-1 text-sm text-muted-foreground">
-                                    {(item as any).authors}
+                                    {item.authors}
                                   </p>
                                   <p className="mt-1 text-sm font-medium text-foreground">
-                                    {(item as any).venue} • {(item as any).year}
+                                    {item.venue} • {item.year}
                                   </p>
                                 </div>
-                                {(item as any).citation && (
+                                {item.citation && (
                                   <div className="text-right">
                                     <p className="text-sm font-semibold text-primary">
-                                      {(item as any).citation}
+                                      {item.citation}
                                     </p>
                                   </div>
                                 )}
                               </div>
                               <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                                {(item as any).description}
+                                {item.description}
                               </p>
-                              {(item as any).link && (item as any).link !== "#" && (
+                              {item.link && item.link !== "#" && (
                                 <div className="mt-4">
-                                  <Link href={(item as any).link} target="_blank">
+                                  <Link href={item.link} target="_blank">
                                     <Button variant="outline" size="sm">
                                       View Paper <ChevronRight className="ml-1 h-4 w-4" />
                                     </Button>
@@ -1448,66 +1481,37 @@ export default function Home() {
                                 </div>
                               )}
                             </>
-                          ) : section.category === "Patents & IP" ? (
+                          ) : isPatent(item) ? (
                             <>
                               <div className="flex items-start justify-between gap-4">
                                 <div className="flex-1">
                                   <div className="mb-2">
                                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                                      {(item as any).status}
+                                      {item.status}
                                     </span>
                                   </div>
                                   <h4 className="text-lg font-bold tracking-tight">
                                     {item.title}
                                   </h4>
                                   <p className="mt-1 text-sm text-muted-foreground">
-                                    {(item as any).number} • {(item as any).year}
+                                    {item.number} • {item.year}
                                   </p>
                                 </div>
                               </div>
                               <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                                {(item as any).description}
+                                {item.description}
                               </p>
-                            </>
-                          ) : section.category === "Certifications" ? (
-                            <>
-                              <div className="flex items-start justify-between gap-4">
-                                <div className="flex-1">
-                                  <h4 className="text-lg font-bold tracking-tight">
-                                    {item.title}
-                                  </h4>
-                                  <p className="mt-1 text-sm text-muted-foreground">
-                                    {(item as any).organization} • {(item as any).year}
-                                  </p>
-                                </div>
-                              </div>
-                              {(item as any).link && (
-                                <div className="mt-3">
-                                  <Link href={(item as any).link} target="_blank">
+                              {item.link && item.link !== "#" && (
+                                <div className="mt-4">
+                                  <Link href={item.link} target="_blank">
                                     <Button variant="outline" size="sm">
-                                      View Credential <ChevronRight className="ml-1 h-4 w-4" />
+                                      View Patent <ChevronRight className="ml-1 h-4 w-4" />
                                     </Button>
                                   </Link>
                                 </div>
                               )}
                             </>
-                          ) : (
-                            <>
-                              <div className="flex items-start justify-between gap-4">
-                                <div className="flex-1">
-                                  <h4 className="text-lg font-bold tracking-tight">
-                                    {item.title}
-                                  </h4>
-                                  <p className="mt-1 text-sm font-medium text-foreground">
-                                    {(item as any).organization} • {(item as any).year}
-                                  </p>
-                                </div>
-                              </div>
-                              <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                                {(item as any).description}
-                              </p>
-                            </>
-                          )}
+                          ) : null}
                         </CardContent>
                       </Card>
                     ))}
