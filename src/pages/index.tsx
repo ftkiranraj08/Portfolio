@@ -1407,38 +1407,38 @@ export default function Home() {
                                 <div className="flex-1">
                                   <div className="mb-2 flex flex-wrap items-center gap-2">
                                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                                      {item.type}
+                                      {(item as any).type}
                                     </span>
                                     <span className={`rounded-full px-3 py-1 text-xs font-medium ${
-                                      item.status === "Published" 
+                                      (item as any).status === "Published" 
                                         ? "bg-green-500/10 text-green-500" 
                                         : "bg-yellow-500/10 text-yellow-500"
                                     }`}>
-                                      {item.status}
+                                      {(item as any).status}
                                     </span>
                                   </div>
                                   <h4 className="text-lg font-bold tracking-tight">
                                     {item.title}
                                   </h4>
                                   <p className="mt-1 text-sm text-muted-foreground">
-                                    {item.authors}
+                                    {(item as any).authors}
                                   </p>
                                   <p className="mt-1 text-sm font-medium text-foreground">
-                                    {item.venue} • {item.year}
+                                    {(item as any).venue} • {(item as any).year}
                                   </p>
                                 </div>
-                                {item.citation && (
+                                {(item as any).citation && (
                                   <div className="text-right">
                                     <p className="text-sm font-semibold text-primary">
-                                      {item.citation}
+                                      {(item as any).citation}
                                     </p>
                                   </div>
                                 )}
                               </div>
                               <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                                {item.description}
+                                {(item as any).description}
                               </p>
-                              {item.link && item.link !== "#" && (
+                              {(item as any).link && (item as any).link !== "#" && (
                                 <div className="mt-4">
                                   <Link href={item.link} target="_blank">
                                     <Button variant="outline" size="sm">
@@ -1454,19 +1454,19 @@ export default function Home() {
                                 <div className="flex-1">
                                   <div className="mb-2">
                                     <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                                      {item.status}
+                                      {(item as any).status}
                                     </span>
                                   </div>
                                   <h4 className="text-lg font-bold tracking-tight">
                                     {item.title}
                                   </h4>
                                   <p className="mt-1 text-sm text-muted-foreground">
-                                    {item.number} • {item.year}
+                                    {(item as any).number} • {(item as any).year}
                                   </p>
                                 </div>
                               </div>
                               <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                                {item.description}
+                                {(item as any).description}
                               </p>
                             </>
                           ) : section.category === "Certifications" ? (
@@ -1477,13 +1477,13 @@ export default function Home() {
                                     {item.title}
                                   </h4>
                                   <p className="mt-1 text-sm text-muted-foreground">
-                                    {item.organization} • {item.year}
+                                    {(item as any).organization} • {(item as any).year}
                                   </p>
                                 </div>
                               </div>
-                              {item.link && (
+                              {(item as any).link && (
                                 <div className="mt-3">
-                                  <Link href={item.link} target="_blank">
+                                  <Link href={(item as any).link} target="_blank">
                                     <Button variant="outline" size="sm">
                                       View Credential <ChevronRight className="ml-1 h-4 w-4" />
                                     </Button>
@@ -1499,12 +1499,12 @@ export default function Home() {
                                     {item.title}
                                   </h4>
                                   <p className="mt-1 text-sm font-medium text-foreground">
-                                    {item.organization} • {item.year}
+                                    {(item as any).organization} • {(item as any).year}
                                   </p>
                                 </div>
                               </div>
                               <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                                {item.description}
+                                {(item as any).description}
                               </p>
                             </>
                           )}
