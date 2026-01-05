@@ -1440,7 +1440,7 @@ export default function Home() {
                               </p>
                               {(item as any).link && (item as any).link !== "#" && (
                                 <div className="mt-4">
-                                  <Link href={item.link} target="_blank">
+                                  <Link href={(item as any).link} target="_blank">
                                     <Button variant="outline" size="sm">
                                       View Paper <ChevronRight className="ml-1 h-4 w-4" />
                                     </Button>
