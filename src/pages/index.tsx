@@ -526,7 +526,7 @@ const education = [
   }
 ];
 
-// Achievements & Publications Data
+// Publications Data
 const achievements: AchievementSection[] = [
   {
     category: "Publications",
@@ -1414,7 +1414,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Achievements & Publications Section */}
+        {/* Publications Section */}
         <section id="achievements" data-scroll-section className="my-64">
           <div
             data-scroll
@@ -1422,13 +1422,13 @@ export default function Home() {
             data-scroll-position="top"
           >
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              🏆 Recognition
+              📄 Publications
             </span>
             <h2 className="mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
-              Achievements & Publications
+              Publications
             </h2>
             <p className="mt-1.5 max-w-3xl text-base tracking-tight text-muted-foreground xl:text-lg">
-              Recognition for research contributions, competitive achievements, and academic excellence.
+              Research contributions and academic publications.
             </p>
 
             <div className="mt-14 space-y-12">
