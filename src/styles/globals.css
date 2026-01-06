@@ -88,11 +88,11 @@
   }
   .nav-active {
     color: rgb(226 232 240) !important;
-    @apply text-sm lowercase tracking-tight text-slate-200;
+    @apply text-sm tracking-tight text-slate-200;
   }
   .nav-link {
     /* Remove the styles from nav-link class */
-    @apply text-sm lowercase tracking-tight text-slate-400;
+    @apply text-sm tracking-tight text-slate-400;
   }
 
   /* blinking animation */
