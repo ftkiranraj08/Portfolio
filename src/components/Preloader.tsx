@@ -19,23 +19,20 @@ const slideUp = {
   },
   exit: {
     top: "-100vh",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
   },
 };
 
 const words = [
-  "வணக்கம்",
-  "नमस्ते",
-  "Hello",
-  "Bonjour",
-  "Ciao",
-  "Olà",
-  "やあ",
-  "Hallå",
-  "Guten tag",
-  "Hallo",
-  
+  "Matplotlib",
+  "Seaborn",
+  "Plotly",
+  "Altair",
+  "Bokeh",
+  "ggplot2",
+  "Shiny",
 ];
+
 
 export default function Preloader() {
   const [index, setIndex] = useState(0);

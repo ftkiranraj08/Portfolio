@@ -59,7 +59,7 @@ interface AchievementSection {
   items: AchievementItem[];
 }
 
-const aboutStats = [{ label: "Years of experience", value: "2+" }, { label: "Technologies & frameworks used", value: "20+" }, { label: "Companies worked with", value: "3+" }, { label: "End-to-end projects delivered", value: "10+" }];
+const aboutStats = [{ label: "Years of experience", value: "1+" }, { label: "Technologies & frameworks used", value: "20+" }, { label: "Companies worked with", value: "3+" }, { label: "End-to-end projects delivered", value: "10+" }];
 
 const projectDetails = [
   {
@@ -103,7 +103,7 @@ const projectDetails = [
     ],
     github: "https://github.com/ftkiranraj08/Data-Science-at-Scale-Final-Project",
     live: "#",
-    category: "STREAMTWEET"
+    category: "Real Time NLP & Streaming Analytics"
   },
   {
     title: "Hierarchical Bayesian Media Mix Modeling",
@@ -125,7 +125,7 @@ const projectDetails = [
     ],
     github: "#",
     live: "#",
-    category: "HIERARCHICAL MMM"
+    category: "Marketing Analytics"
   },
   {
     title: "Multilingual Translator with Sentiment & Summarization",
@@ -144,9 +144,9 @@ const projectDetails = [
       { label: "Supported Languages", value: " 3+" },
       { label: "Summarization Accuracy", value: "Contextually coherent" }
     ],
-    github: "https://github.com/yourusername/rag-assistant",
+    github: "#",
     live: "#",
-    category: "NLP"
+    category: "Natural Language Processing"
   },
   {
     title: "Playlist Optimization & Recommendation Analysis",
@@ -167,7 +167,7 @@ const projectDetails = [
     ],
     github: "https://github.com/ftkiranraj08/Playlist-Recommender",
     live: "#",
-    category: "SPOTIFY MPD"
+    category: "Product & Engagement Analytics"
   },
   {
     title: "Spatiotemporal Network Analysis of Urban Mobility",
@@ -188,7 +188,7 @@ const projectDetails = [
     ],
     github: "https://github.com/ftkiranraj08/Analyzing-NYC-Taxi-and-Ride-Hailing-Dynamics/tree/main",
     live: "#",
-    category: "SPOTIFY MPD"
+    category: "Network Science & Econometric Analysis"
   },
   {
     title: "Data-Driven Market Potential & Customer Engagement Strategy",
@@ -209,7 +209,7 @@ const projectDetails = [
     ],
     github: "https://github.com/ftkiranraj08/Mapping-market-dynamics",
     live: "#",
-    category: "RETAIL ANALYTICS"
+    category: "Market & Customer Analytics"
   },
   {
     title: "COVID-19 Case Prediction with Social Media Awareness Signals",
@@ -228,9 +228,9 @@ const projectDetails = [
       { label: "Counties Analyzed", value: "Ohio (Statewide)" },
       { label: "Features Engineered", value: "144+" }
     ],
-    github: "https://github.com/ftkiranraj08/Mapping-market-dynamics",
+    github: "#",
     live: "#",
-    category: "RETAIL ANALYTICS"
+    category: "Time Series & Predictive Modeling"
   },
   {
     title: "Airline Ticket Fare Forecasting with Temporal & Demand Signals",
@@ -251,7 +251,7 @@ const projectDetails = [
     ],
     github: "https://github.com/ftkiranraj08/Airline-Ticket-Fare-Forecasting/tree/main",
     live: "#",
-    category: "RETAIL ANALYTICS"
+    category: "Time Series and Pricing Analytics"
   },
 ];
 
@@ -266,7 +266,7 @@ const projects = [
     title: "Real-Time Tweet Sentiment Pipeline",
     description: "Real-Time Tweet Sentiment Pipeline",
     image: "/assets/My-Movie.webm",
-    href: "#",
+    href: "https://github.com/ftkiranraj08/Data-Science-at-Scale-Final-Project",
   },
   // {
   //   title: "TranslateBot",
@@ -282,9 +282,9 @@ const projects = [
   },
   {
     title: "MAGic",
-    description: "MAthematical Gene Circuit (MAGiC) Modeling Kits",
+    description: "Mathematical Gene Circuit (MAGiC) Modeling Kits",
     image: "/assets/Walkthrough.webm",
-    href: "#",
+    href: "https://github.com/ftkiranraj08/Magic-V17.1",
   },
 ];
 
@@ -311,7 +311,7 @@ const services = [
   {
     service: "Data Engineering & MLOps",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
+            "Engineering scalable data pipelines, model deployment workflows, and monitoring systems using cloud platforms, Docker, and modern MLOps practices.",
     icon: Server,
   },
   {
@@ -446,8 +446,8 @@ const internships = [
       "Engineered a Geo-level Bayesian Hierarchical Media Mix Model (GBHMMM) using PyMC across 188 U.S. DMAs to quantify regional media effectiveness and optimize local budget allocation",
       "Built a DMA × Week panel dataset (~18K rows) integrating per-capita sales, demographics, and media spend across TV, Video, Social, Display, and OOH channels",
       "Designed and implemented Adstock (carryover) and Hill (saturation) transformations to model diminishing returns and lagged media effects",
-      "Conducted baseline OLS and Ridge regressions with DMA fixed effects achieving R² = 0.833 and RMSE = 0.009 to validate signal stability",
-      "Applied Bayesian hierarchical pooling and prior regularization to reduce cross-brand ROAS variance by ~60–65% and response-curve bias by ~75%, producing significantly narrower credible intervals"
+      "Achieved strong out-of-sample predictive performance with R² ≈ 0.77, validating model generalization across heterogeneous markets",
+  "Improved DMA-level ROI estimation precision by ~35% versus baseline models through hierarchical regularization and contextual clustering",
     ],
     technologies: ["PyMC", "JAX", "Python", "Pandas", "Scikit-learn", "LightweightMMM","Matplotlib","arviz"],
     skills: ["Bayesian Modeling", "Media Mix Modeling", "Causal Inference", "Regression Analysis", "Marketing Analytics"],
@@ -558,7 +558,7 @@ const achievements: AchievementSection[] = [
     category: "Patents & IP",
     items: [
       {
-        title: "MAthematical Gene Circuit (MAGiC) Modeling Kits",
+        title: "Mathematical Gene Circuit (MAGiC) Modeling Kits",
         number: "US Patent Application 2-25070",
         year: "2025",
         status: "Pending",
@@ -603,7 +603,7 @@ export default function Home() {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 250) {
+        if (window.scrollY >= sectionTop - 150) {
           current = section.getAttribute("id") ?? "";
         }
       });
@@ -738,38 +738,33 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" data-scroll-section>
+        <section id="about" data-scroll-section className="pt-24">
           <div
             data-scroll
             data-scroll-speed=".4"
             data-scroll-position="top"
-            className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
+            className="my-14 flex max-w-6xl flex-col justify-start space-y-16"
           >
-            <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground text-justify xl:text-[40px]">
-              I&apos;m an experienced data scientist specializing in building end-to-end AI and machine learning systems, with hands-on experience since 2023. My work spans startups, consulting, and academic research, where I’ve led projects from problem formulation and data engineering through model development, validation, and deployment. I’ve built large-scale data pipelines, RAG-powered agents, and advanced ML models across NLP, computer vision, and Bayesian modeling, while collaborating closely with cross-functional teams to translate complex data into measurable business impact.
-
-              {/* <Link
-                href="https://pytorch.org/"
-                target="_blank"
-                className="underline"
-              >
-                  PyTorch & Hugging Face
-              </Link>{" "} */}
-            </h2>
-            <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
-              {aboutStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex flex-col items-center text-center xl:items-start xl:text-start"
-                >
-                  <span className="clash-grotesk text-gradient text-4xl font-semibold tracking-tight xl:text-6xl">
-                    {stat.value}
-                  </span>
-                  <span className="tracking-tight text-muted-foreground xl:text-lg">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+            <div className="space-y-12">
+              <h2 className="text-justify text-2xl font-light leading-relaxed tracking-tight text-foreground xl:text-[36px] xl:leading-[1.5]">
+                I&apos;m a Data Scientist specializing in end-to-end AI and ML systems, with experience across startups, consulting, and research. Built scalable pipelines, RAG agents, and advanced models in NLP, computer vision, and Bayesian modeling to drive real-world impact.
+              </h2>
+              
+              <div className="grid grid-cols-2 gap-6 pt-4 xl:grid-cols-4 xl:gap-8">
+                {aboutStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col space-y-2 rounded-lg border border-border/40 bg-secondary/20 p-6 backdrop-blur-sm transition-all hover:border-border/60 hover:bg-secondary/30"
+                  >
+                    <span className="clash-grotesk text-gradient text-5xl font-bold tracking-tight xl:text-6xl">
+                      {stat.value}
+                    </span>
+                    <span className="text-sm leading-snug tracking-tight text-muted-foreground xl:text-base">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -799,8 +794,7 @@ export default function Home() {
               Streamlined digital experiences.
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
+              I&apos;ve worked on a wide range of data science and AI projects, from exploratory analysis and predictive modeling to large-scale, production-ready machine learning systems. Below are some of my featured projects.
             </p>
 
             {/* Carousel */}
@@ -811,26 +805,49 @@ export default function Home() {
                     <CarouselItem key={project.title} className="md:basis-1/2">
                       <Card id="tilt">
                         <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
-                          </Link>
+                          {project.href && project.href !== "#" ? (
+                            <Link href={project.href} target="_blank" passHref>
+                              {project.image.endsWith(".webm") ? (
+                                <video
+                                  src={project.image}
+                                  autoPlay
+                                  loop
+                                  muted
+                                  className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                                />
+                              ) : (
+                                <Image
+                                  src={project.image}
+                                  alt={project.title}
+                                  width={600}
+                                  height={300}
+                                  quality={100}
+                                  className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                                />
+                              )}
+                            </Link>
+                          ) : (
+                            <>
+                              {project.image.endsWith(".webm") ? (
+                                <video
+                                  src={project.image}
+                                  autoPlay
+                                  loop
+                                  muted
+                                  className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                                />
+                              ) : (
+                                <Image
+                                  src={project.image}
+                                  alt={project.title}
+                                  width={600}
+                                  height={300}
+                                  quality={100}
+                                  className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                                />
+                              )}
+                            </>
+                          )}
                         </CardHeader>
                         <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
                           <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
@@ -1327,7 +1344,7 @@ export default function Home() {
               Academic Journey
             </h2>
             <p className="mt-1.5 max-w-3xl text-base tracking-tight text-muted-foreground xl:text-lg">
-              Building a strong foundation in computer science and specializing in AI/ML through rigorous coursework and research.
+              Building a strong foundation in Data Science through rigorous coursework , research and internships.
             </p>
 
             <div className="mt-14 space-y-8">
@@ -1583,9 +1600,8 @@ export default function Home() {
               Let&apos;s work{" "}
               <span className="text-gradient clash-grotesk">together.</span>
             </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;m currently available for freelance work and open to
-              discussing new projects.
+            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-sm">
+              I&apos;m currently seeking full-time opportunities and open to relocating anywhere within the U.S. I am authorized to work under OPT and available to start immediately.
             </p>
             <Link href="mailto:ftkiranraj@proton.me" passHref>
               <Button className="mt-6">Get in touch</Button>
